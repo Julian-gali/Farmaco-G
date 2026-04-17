@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vademécum Digital de Fármacos Oftálmicos</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons (Phosphor Icons para un diseño clínico moderno) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="ph ph-eye text-primary text-3xl"></i>
+                <h2>Oftalmo<span>Mecum</span></h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul id="main-nav">
+                    <li class="active"><a href="#" data-target="dashboard"><i class="ph ph-squares-four"></i> Dashboard</a></li>
+                    <li><a href="#" data-target="introduccion"><i class="ph ph-book-open"></i> Introducción</a></li>
+                    <li><a href="#" data-target="farmacologia-general"><i class="ph ph-flask"></i> Farmacología General</a></li>
+                    <li><a href="#" data-target="farmacologia-ocular"><i class="ph ph-eye"></i> Farmacología Ocular</a></li>
+                    <li><a href="#" data-target="farmacoterapeutica"><i class="ph ph-prescription"></i> Farmacoterapéutica</a></li>
+                    <li><a href="#" data-target="tinciones"><i class="ph ph-drop"></i> Tinciones Vitales</a></li>
+                    <li><a href="#" data-target="medicamentos"><i class="ph ph-pill"></i> Medicamentos</a></li>
+                    <li><a href="#" data-target="patologias"><i class="ph ph-virus"></i> Patologías</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#"><i class="ph ph-gear"></i> Configuración</a>
+                <a href="#"><i class="ph ph-info"></i> Ayuda</a>
+            </div>
+        </aside>
+
+        <!-- Main Application Area -->
+        <main class="main-content">
+            <!-- Header section -->
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="ph ph-magnifying-glass"></i>
+                    <input type="text" placeholder="Buscar principio activo, nombre comercial, indicación...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn" id="theme-toggle" aria-label="Cambiar tema (Claro/Oscuro)">
+                        <i class="ph ph-moon"></i>
+                    </button>
+                    <button class="icon-btn notification-btn" aria-label="Notificaciones">
+                        <i class="ph ph-bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=Doc+Oftalmolo&background=0077b6&color=fff&rounded=true" alt="Perfil Médico">
+                        <div class="user-info">
+                            <span class="user-name">Dr. Ocular</span>
+                            <span class="user-role">Oftalmólogo</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dynamic Content Area -->
+            <div class="content-area">
+                
+                <!-- VIEW 0: DASHBOARD -->
+                <div id="dashboard" class="view-section active">
+                    <div class="page-header">
+                        <h1>Dashboard de Especialidad</h1>
+                        <p>Bienvenido al sistema integrado de información terapéutica y dosificación oftálmica.</p>
+                    </div>
+
+                    <!-- Key Metrics / Stats (Dashboard Cards) -->
+                    <section class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="ph ph-database"></i></div>
+                            <div class="stat-info">
+                                <h3>Fármacos Indexados</h3>
+                                <span class="stat-value empty-skeleton-text-lg"></span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="ph ph-books"></i></div>
+                            <div class="stat-info">
+                                <h3>Categorías ATC</h3>
+                                <span class="stat-value empty-skeleton-text-lg"></span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="ph ph-clock-counter-clockwise"></i></div>
+                            <div class="stat-info">
+                                <h3>Vistos Recientemente</h3>
+                                <span class="stat-value empty-skeleton-text-lg"></span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- VIEW 1: INTRODUCCION -->
+                <div id="introduccion" class="view-section">
+                    <div class="page-header">
+                        <h1>1. Introducción al Vademécum</h1>
+                        <p>Guía esencial de medicamentos en optometría y oftalmología.</p>
+                    </div>
+                    <div class="text-content-card">
+                        <p class="lead-text">Este vademécum digital reúne información esencial sobre los medicamentos utilizados en optometría y oftalmología. Su objetivo es facilitar la consulta rápida sobre principios activos, formas farmacéuticas, indicaciones, posología y efectos adversos, contribuyendo al manejo adecuado de las alteraciones oculares.</p>
+                        <h3>Contenido de esta sección:</h3>
+                        <ul class="styled-list mt-3">
+                            <li><i class="ph-fill ph-check-circle"></i> <span><strong>Qué es un vademécum.</strong></span></li>
+                            <li><i class="ph-fill ph-check-circle"></i> <span><strong>Para qué sirve en optometría.</strong></span></li>
+                            <li><i class="ph-fill ph-check-circle"></i> <span><strong>Importancia del conocimiento farmacológico:</strong> Esencial para el manejo seguro y efectivo del paciente oftálmico.</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- VIEW 2: FARMACOLOGÍA GENERAL -->
+                <div id="farmacologia-general" class="view-section">
+                    <div class="page-header">
+                        <h1>2. Farmacología General</h1>
+                        <p>Aquí se explica la base estructural y funcional del medicamento.</p>
+                    </div>
+                    
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>2.1 Concepto de fármaco</h3>
+                            <p>Sustancia química que produce cambios en el organismo.</p>
+                            <div class="callout callout-info mt-3">
+                                <i class="ph-fill ph-info"></i>
+                                <span>Utilizada para <strong>prevenir</strong>, <strong>diagnosticar</strong> o <strong>tratar</strong> enfermedades.</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>2.2 Medicamento</h3>
+                            <p>Preparación farmacéutica que contiene uno o más principios activos. Diseñado para su administración controlada en el organismo.</p>
+                            <h4 class="mt-3" style="color:var(--text-main); font-size:14px; margin-bottom:8px;">Componentes del medicamento:</h4>
+                            <div class="component-box">
+                                <strong>Principio activo</strong>
+                                <p>Sustancia responsable del efecto terapéutico clínico esperado.</p>
+                            </div>
+                            <div class="component-box">
+                                <strong>Excipientes</strong>
+                                <p>Sustancias que acompañan al principio activo. Facilitan su estabilidad, conservación o absorción.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-content-card mt-4">
+                        <h3>2.3 Formas farmacéuticas</h3>
+                        <p>Se refiere a la forma física en que el medicamento es preparado para su administración óptima.</p>
+                        
+                        <h4 class="mt-4" style="color:var(--text-main); margin-bottom:16px;">Formas farmacéuticas oftálmicas</h4>
+                        <div class="accordion-style-list">
+                            <div class="form-item">
+                                <div class="form-icon"><i class="ph ph-drop"></i></div>
+                                <div class="form-text">
+                                    <strong>Colirios (gotas oftálmicas)</strong>
+                                    <p>Soluciones estériles aplicadas directamente en el ojo.</p>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="form-icon"><i class="ph ph-bandaids"></i></div>
+                                <div class="form-text">
+                                    <strong>Ungüentos oftálmicos</strong>
+                                    <p>Preparaciones semisólidas que permanecen más tiempo en la superficie ocular, aumentando el tiempo de contacto.</p>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="form-icon"><i class="ph ph-flask"></i></div>
+                                <div class="form-text">
+                                    <strong>Geles oftálmicos</strong>
+                                    <p>Mayor viscosidad que los colirios. Proporcionan un efecto intermedio entre colirio y ungüento.</p>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="form-icon"><i class="ph ph-test-tube"></i></div>
+                                <div class="form-text">
+                                    <strong>Soluciones oftálmicas</strong>
+                                    <p>Preparaciones líquidas acuosas y 100% estériles.</p>
+                                </div>
+                            </div>
+                            <div class="form-item">
+                                <div class="form-icon"><i class="ph ph-sparkle"></i></div>
+                                <div class="form-text">
+                                    <strong>Suspensiones oftálmicas</strong>
+                                    <p>Contienen partículas del medicamento suspendidas en un líquido (requieren agitación antes de uso).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-content-card mt-4">
+                        <h3>2.4 Vías de administración ocular</h3>
+                        <ul class="styled-list mt-3" style="max-width:400px;">
+                            <li><i class="ph-fill ph-caret-right"></i> <span>Tópica (colirios y ungüentos)</span></li>
+                            <li><i class="ph-fill ph-caret-right"></i> <span>Subconjuntival</span></li>
+                            <li><i class="ph-fill ph-caret-right"></i> <span>Intraocular</span></li>
+                            <li><i class="ph-fill ph-caret-right"></i> <span>Sistémica</span></li>
+                        </ul>
+                        <div class="callout callout-success mt-4">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <span>La más usada en optometría es la <strong>vía tópica ocular</strong>.</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VIEW 3: FARMACOLOGÍA OCULAR -->
+                <div id="farmacologia-ocular" class="view-section">
+                    <div class="page-header">
+                        <h1>3. Farmacología Ocular</h1>
+                        <p>Explica cómo interactúan y actúan los medicamentos una vez en contacto con el ojo.</p>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>3.1 Barreras oculares</h3>
+                            <p>El ojo posee estructuras de defensa que limitan naturalmente la absorción del medicamento:</p>
+                            <div class="tags-container mt-3">
+                                <span class="tag-badge">Córnea</span>
+                                <span class="tag-badge">Conjuntiva</span>
+                                <span class="tag-badge">Película lagrimal</span>
+                            </div>
+                            <div class="callout callout-warning mt-4">
+                                <i class="ph-fill ph-warning"></i>
+                                <span>Estas barreras metabólicas y físicas afectan directamente la biodisponibilidad del fármaco.</span>
+                            </div>
+                        </div>
+
+                        <div class="info-card">
+                            <h3>3.2 Absorción de medicamentos</h3>
+                            <p>Factores fisicoquímicos y fisiológicos que influyen en la penetración:</p>
+                            <ul class="styled-list mt-3">
+                                <li><i class="ph-fill ph-thermometer"></i> <span><strong>pH</strong> del medicamento frente a la lágrima</span></li>
+                                <li><i class="ph-fill ph-drop-half-bottom"></i> <span><strong>Viscosidad</strong> del vehículo formulado</span></li>
+                                <li><i class="ph-fill ph-clock"></i> <span><strong>Tiempo de contacto</strong> con la superficie del ojo</span></li>
+                                <li><i class="ph-fill ph-eye"></i> <span><strong>Integridad</strong> de la barrera corneal epitelial</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="text-content-card mt-4">
+                        <h3>3.3 Distribución del medicamento</h3>
+                        <p>Una vez aplicado, dependiendo del poder de penetración, el medicamento puede llegar secuencialmente a:</p>
+                        <div class="distribution-flow mt-4">
+                            <div class="flow-step">1. Córnea</div>
+                            <div class="flow-arrow"><i class="ph-bold ph-arrow-right"></i></div>
+                            <div class="flow-step">2. Humor acuoso</div>
+                            <div class="flow-arrow"><i class="ph-bold ph-arrow-right"></i></div>
+                            <div class="flow-step">3. Iris</div>
+                            <div class="flow-arrow"><i class="ph-bold ph-arrow-right"></i></div>
+                            <div class="flow-step">4. Retina <small>(en algunos casos específicos)</small></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 4: FARMACOTERAPÉUTICA -->
+                <div id="farmacoterapeutica" class="view-section">
+                    <div class="page-header">
+                        <h1>4. Farmacoterapéutica Ocular</h1>
+                        <p>Esta sección detalla cómo se usan los medicamentos para tratar enfermedades oculares. Aquí se fundan las bases de las categorías del vademécum.</p>
+                    </div>
+
+                    <div class="text-content-card mb-4" style="margin-bottom:24px;">
+                        <p style="color:var(--text-main);">Clasificación terapéutica fundamental según el mecanismo y la patología diana.</p>
+                    </div>
+
+                    <div class="category-grid">
+                        <div class="cat-card">
+                            <div class="cat-icon"><i class="ph ph-drop"></i></div>
+                            <div class="cat-body">
+                                <h3>4.1 Vasoconstrictores</h3>
+                                <p>Disminuyen el enrojecimiento ocular (hiperemia) al contraer los vasos sanguíneos conjuntivales.</p>
+                            </div>
+                        </div>
+                        <div class="cat-card">
+                            <div class="cat-icon"><i class="ph ph-virus"></i></div>
+                            <div class="cat-body">
+                                <h3>4.2 Antibióticos</h3>
+                                <p>Tratan y previenen infecciones bacterianas inhibiendo el crecimiento de biopelículas o matando la bacteria.</p>
+                            </div>
+                        </div>
+                        <div class="cat-card">
+                            <div class="cat-icon"><i class="ph ph-shield-plus"></i></div>
+                            <div class="cat-body">
+                                <h3>4.3 Antiinflamatorios</h3>
+                                <p>Reducen la inflamación ocular. Se dividen principalmente en AINEs y corticosteroides.</p>
+                            </div>
+                        </div>
+                        <div class="cat-card">
+                            <div class="cat-icon"><i class="ph ph-wind"></i></div>
+                            <div class="cat-body">
+                                <h3>4.4 Antihistamínicos</h3>
+                                <p>Utilizados primariamente en cuadros de alergias oculares bloqueando los receptores de histamina.</p>
+                            </div>
+                        </div>
+                        <div class="cat-card">
+                            <div class="cat-icon"><i class="ph ph-eye"></i></div>
+                            <div class="cat-body">
+                                <h3>4.5 Midriáticos y ciclopléjicos</h3>
+                                <p>Inducen midriasis (dilatan la pupila) o paralizan el músculo ciliar inhibiendo la acomodación.</p>
+                            </div>
+                        </div>
+                        <div class="cat-card">
+                            <div class="cat-icon"><i class="ph ph-droplets"></i></div>
+                            <div class="cat-body">
+                                <h3>4.6 Lubricantes oculares</h3>
+                                <p>Lágrimas artificiales empleadas para tratar el ojo seco y proteger la superficie epitelial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- VIEWS PLACEHOLDERS FOR NEXT PARTS -->
+                <div id="tinciones" class="view-section">
+                    <div class="page-header">
+                        <h1>5. Tinciones Vitales</h1>
+                        <p>Sustancias empleadas para teñir reversiblemente los tejidos oculares y la película lagrimal.</p>
+                    </div>
+
+                    <div class="text-content-card mb-4" style="margin-bottom:24px;">
+                        <h3 class="mb-2" style="font-size:18px;">¿Qué son y para qué sirven?</h3>
+                        <p class="lead-text" style="font-size:16px;">Son compuestos formulados para teñir tejidos de manera transitoria, permitiendo el estudio de ulceraciones, descapitalizaciones y resaltando la morfología de la película lagrimal. Facilitan procedimientos diagnósticos con alto contraste como el trazado lagrimal y la circulación sanguínea.</p>
+                    </div>
+
+                    <!-- Fluoresceina Sódica -->
+                    <div class="text-content-card mt-4" style="border-top: 4px solid #eab308;">
+                        <h3 style="color:#ca8a04; display:flex; align-items:center; gap:8px;">
+                            <i class="ph-fill ph-drop"></i> Fluoresceína Sódica
+                        </h3>
+                        <p>Derivado de los tintes de xantina (C₂₀H₁₀Na₂O₅), de bajo peso molecular (376 Da) y muy hidrosoluble. Es la primera opción en la práctica clínica para evaluar la córnea y la película lagrimal.</p>
+                        
+                        <div class="info-grid mt-3">
+                            <div class="component-box" style="margin-bottom:0;">
+                                <strong>Mecanismo y Observación</strong>
+                                <p>No penetra epitelio corneal intacto. Tiñe zonas sin células, células en apoptosis o con pérdida de uniones. Se observa bajo luz azul cobalto y se intensifica con filtro amarillo Wratten.</p>
+                            </div>
+                            <div class="component-box" style="margin-bottom:0; background:rgba(234, 179, 8, 0.1); border-color:#eab308;">
+                                <strong style="color:#ca8a04;">Filtro Wratten (Amarillo)</strong>
+                                <p>Bloquea luz azul y deja pasar fluorescencia verde (aumentando contraste). Ideal para microerosiones, queratitis punteada y bordes de L.C.</p>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 24px;">
+                             <img src="img/p1.png" alt="Fluoresceína Sódica Clínica" style="max-width: 80%; max-height: 350px; object-fit: contain; border-radius: var(--radius-md); box-shadow: var(--card-shadow); border: 1px solid var(--border-color);">
+                        </div>
+
+                        <h4 class="mt-4">Aplicación Clínica</h4>
+                        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                            <div style="flex:1; min-width:300px;">
+                                <div class="callout callout-success mt-0">
+                                    <i class="ph-fill ph-check-circle"></i>
+                                    <div>
+                                        <strong>Sí utilizar en:</strong>
+                                        <ul class="styled-list mt-2" style="font-size:14px; font-weight:400;">
+                                            <li>Defectos epiteliales (abrasiones, úlceras, erosiones).</li>
+                                            <li>Medición del BUT (Tiempo de Ruptura Lagrimal).</li>
+                                            <li>Ojo seco, sospecha de cuerpo extraño y trauma leve.</li>
+                                            <li>Prueba de Seidel (fuga acuoso) y evaluación de L.C.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex:1; min-width:300px;">
+                                <div class="callout callout-warning mt-0" style="background-color:rgba(239, 68, 68, 0.1); color:var(--text-main); border-left-color:var(--danger);">
+                                    <i class="ph-fill ph-x-circle" style="color:var(--danger);"></i>
+                                    <div>
+                                        <strong style="color:var(--danger);">NO utilizar con:</strong>
+                                        <ul class="styled-list mt-2" style="font-size:14px; font-weight:400;">
+                                            <li>Alergia conocida, perforaciones graves sin evaluar.</li>
+                                            <li>Lentes de contacto blandos puestos.</li>
+                                            <li>Inmediatamente antes de cultivos microbiológicos o como única prueba.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Verde Lisamina -->
+                    <div class="text-content-card mt-4" style="border-top: 4px solid var(--success);">
+                        <h3 style="color:var(--success); display:flex; align-items:center; gap:8px;">
+                            <i class="ph-fill ph-drop"></i> Verde de Lisamina (1%)
+                        </h3>
+                        <p>Tinte no fluorescente de color azul verdoso (577 G-MOL). Especializado en teñir células muertas desvitalizadas y mucosidad. Es muy recomendado para evaluar la conjuntiva bulbar y tarsal.</p>
+                        
+                        <div class="info-grid mt-3">
+                            <div class="component-box" style="margin-bottom:0;">
+                                <strong>Mecanismo y Observación</strong>
+                                <p>No tiñe células sanas ni la película lagrimal. Similar a la Rosa de Bengala pero mucho mejor tolerada. Visualización con luz blanca o filtro rojo. Máxima visibilidad 2 mins post-aplicación.</p>
+                            </div>
+                            <div class="component-box" style="margin-bottom:0;">
+                                <strong>Precauciones</strong>
+                                <p>Puede generar leve sensación de ardor transitorio. Mejor tolerancia general que la Rosa de Bengala.</p>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 24px;">
+                             <img src="img/p3.png" alt="Tinción de Verde Lisamina" style="max-width: 80%; max-height: 350px; object-fit: contain; border-radius: var(--radius-md); box-shadow: var(--card-shadow); border: 1px solid var(--border-color);">
+                        </div>
+
+                        <h4 class="mt-4">Aplicación Clínica</h4>
+                        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                            <div style="flex:1; min-width:300px;">
+                                <div class="callout callout-success mt-0">
+                                    <i class="ph-fill ph-check-circle"></i>
+                                    <div>
+                                        <strong>Sí utilizar en:</strong>
+                                        <ul class="styled-list mt-2" style="font-size:14px; font-weight:400;">
+                                            <li>Diagnóstico de ojo seco moderado/severo y QC Seca.</li>
+                                            <li>Detección de células epiteliales desvitalizadas o dañadas.</li>
+                                            <li>Seguimiento en enfermedades inflamatorias de superficie.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex:1; min-width:300px;">
+                                <div class="callout callout-warning mt-0" style="background-color:rgba(239, 68, 68, 0.1); color:var(--text-main); border-left-color:var(--danger);">
+                                    <i class="ph-fill ph-x-circle" style="color:var(--danger);"></i>
+                                    <div>
+                                        <strong style="color:var(--danger);">NO utilizar con:</strong>
+                                        <ul class="styled-list mt-2" style="font-size:14px; font-weight:400;">
+                                            <li>Infecciones oculares agudas (sin evaluación previa).</li>
+                                            <li>Cultivos citológicos inmediatamente posteriores.</li>
+                                            <li>Como única prueba diagnóstica sin clínica.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rosa Bengala -->
+                    <div class="text-content-card mt-4" style="border-top: 4px solid #ec4899;">
+                        <h3 style="color:#db2777; display:flex; align-items:center; gap:8px;">
+                            <i class="ph-fill ph-drop"></i> Rosa de Bengala (1%)
+                        </h3>
+                        <p>Sal disódica (1018 G-MOL) introducida en 1903. Se caracteriza por teñir células muertas degeneradas, filamentos de mucina y zonas desprovistas de glicocálix o protección lagrimal.</p>
+                        
+                        <div class="info-grid mt-3">
+                            <div class="component-box" style="margin-bottom:0;">
+                                <strong>Mecanismo y Observación</strong>
+                                <p>Se observa con luz blanca (un filtro libre de rojo mejora visibilidad en lámpara de hendidura). Se recomienda impregnar tira con solución salina y aplicar al saco conjuntival.</p>
+                            </div>
+                            <div class="component-box" style="margin-bottom:0; background:rgba(239, 68, 68, 0.05); border-color:#ec4899;">
+                                <strong style="color:#db2777;">Efectos Adversos Importantes</strong>
+                                <p>Produce ardor significativo, irritación, citotoxicidad e hiperemia conjuntival transitoria. Marca zonas sin cobertura mucínica.</p>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 24px;">
+                             <img src="img/p6.png" alt="Rosa de Bengala" style="max-width: 80%; max-height: 350px; object-fit: contain; border-radius: var(--radius-md); box-shadow: var(--card-shadow); border: 1px solid var(--border-color);">
+                        </div>
+
+                        <h4 class="mt-4">Aplicación Clínica</h4>
+                        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                            <div style="flex:1; min-width:300px;">
+                                <div class="callout callout-success mt-0">
+                                    <i class="ph-fill ph-check-circle"></i>
+                                    <div>
+                                        <strong>Sí utilizar en:</strong>
+                                        <ul class="styled-list mt-2" style="font-size:14px; font-weight:400;">
+                                            <li>Síndrome de ojo seco severo (evaluar falta de mucina).</li>
+                                            <li>Sospecha de queratitis herpética o neoplasias.</li>
+                                            <li>Seguimiento de QC Seca grave crónica.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="flex:1; min-width:300px;">
+                                <div class="callout callout-warning mt-0" style="background-color:rgba(239, 68, 68, 0.1); color:var(--text-main); border-left-color:var(--danger);">
+                                    <i class="ph-fill ph-x-circle" style="color:var(--danger);"></i>
+                                    <div>
+                                        <strong style="color:var(--danger);">NO utilizar con:</strong>
+                                        <ul class="styled-list mt-2" style="font-size:14px; font-weight:400;">
+                                            <li>Pacientes con hipersensibilidad ocular marcada.</li>
+                                            <li>Lesiones corneales extensas. Lentes blandos (los tiñe).</li>
+                                            <li>Antes de realizar cultivos/citología.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Escalas -->
+                    <div class="text-content-card mt-4">
+                        <h3 class="mb-3">Sistemas de Gradación y Escalas Clínicas</h3>
+                        <div class="category-grid mt-4">
+                            <div class="cat-card" style="flex-direction: column; align-items: center;">
+                                <div class="cat-icon" style="background-color:var(--primary-light); color:var(--primary); margin-bottom: 8px;"><i class="ph-fill ph-ruler"></i></div>
+                                <div class="cat-body" style="width: 100%; text-align: center;">
+                                    <h3 style="margin-bottom: 8px;">Escala NEI</h3>
+                                    <p style="margin-bottom: 16px;">Del National Eye Institute. Clasifica y cuantifica tinción en ojo seco asignando puntuación por intensidad/extensión.</p>
+                                    <img src="img/p2.png" alt="Escala de NEI" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                </div>
+                            </div>
+                            <div class="cat-card" style="flex-direction: column; align-items: center;">
+                                <div class="cat-icon" style="background-color:var(--primary-light); color:var(--primary); margin-bottom: 8px;"><i class="ph-fill ph-list-numbers"></i></div>
+                                <div class="cat-body" style="width: 100%; text-align: center;">
+                                    <h3 style="margin-bottom: 8px;">Van Bijsterveld</h3>
+                                    <p style="margin-bottom: 16px;">Sistema de puntuación tradicional para Rosa de Bengala o Verde de Lisamina sumando sectores divididos.</p>
+                                    <img src="img/p4.png" alt="Esquema Van Bijsterveld" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                </div>
+                            </div>
+                            <div class="cat-card" style="flex-direction: column; align-items: center;">
+                                <div class="cat-icon" style="background-color:var(--primary-light); color:var(--primary); margin-bottom: 8px;"><i class="ph-fill ph-chart-bar"></i></div>
+                                <div class="cat-body" style="width: 100%; text-align: center;">
+                                    <h3 style="margin-bottom: 8px;">Esquema OXFORD</h3>
+                                    <p style="margin-bottom: 16px;">Gradación clínica universal evaluando daño superficial mediante patrones visuales predeterminados (A-E).</p>
+                                    <img src="img/p5.png" alt="Esquema OXFORD" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="medicamentos" class="view-section">
+                    <div class="page-header" style="margin-bottom: 24px;">
+                        <h1>6. Medicamentos</h1>
+                        <p>Catálogo de fármacos clasificados. Explora las tarjetas interactivas o filtra por categoría.</p>
+                    </div>
+
+                    <!-- Botones de Filtrado -->
+                    <div style="display:flex; gap:12px; margin-bottom: 32px; flex-wrap:wrap;">
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--primary); color:white; background-color:var(--primary); cursor:pointer;" onclick="renderMedicamentos('todos', this)">Todos</button>
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--border-color); background-color:var(--bg-card); color:var(--text-main); cursor:pointer;" onclick="renderMedicamentos('antialergicos', this)">Antialérgicos y AINEs</button>
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--border-color); background-color:var(--bg-card); color:var(--text-main); cursor:pointer;" onclick="renderMedicamentos('lubricantes', this)">Lubricantes</button>
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--border-color); background-color:var(--bg-card); color:var(--text-main); cursor:pointer;" onclick="renderMedicamentos('corticosteroides', this)">Corticosteroides</button>
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--border-color); background-color:var(--bg-card); color:var(--text-main); cursor:pointer;" onclick="renderMedicamentos('anticolinergicos', this)">Anticolinérgicos</button>
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--border-color); background-color:var(--bg-card); color:var(--text-main); cursor:pointer;" onclick="renderMedicamentos('antiglaucomatosos', this)">Antiglaucomatosos</button>
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--border-color); background-color:var(--bg-card); color:var(--text-main); cursor:pointer;" onclick="renderMedicamentos('aines', this)">Inmunomoduladores y AINEs</button>
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--border-color); background-color:var(--bg-card); color:var(--text-main); cursor:pointer;" onclick="renderMedicamentos('antimicrobianos', this)">Antimicrobianos</button>
+                        <button class="tag-badge btn-filter" style="border:1px solid var(--border-color); background-color:var(--bg-card); color:var(--text-main); cursor:pointer;" onclick="renderMedicamentos('vasoconstrictores', this)">Vasoconstrictores (Blanqueadores)</button>
+                    </div>
+
+                    <!-- Contenedor dinámico de JS -->
+                    <div id="medicamentos-grid" class="drugs-grid">
+                        <!-- El script.js inyectará el contenido aquí -->
+                    </div>
+                </div>
+
+                <div id="patologias" class="view-section">
+                    <div class="page-header" style="margin-bottom: 24px;">
+                        <h1>7. Patologías Oculares</h1>
+                        <p>Guía de alteraciones clínicas, signos, síntomas y su abordaje terapéutico.</p>
+                    </div>
+
+                    <!-- Intro: Inflamación de los párpados -->
+                    <div class="text-content-card mb-4" style="border-bottom:3px solid var(--primary-light);">
+                        <h3 class="mb-2" style="font-size:18px;">Inflamación de los Párpados</h3>
+                        <p class="lead-text" style="font-size:15px;">La inflamación palpebral puede originarse por infecciones bacterianas, virales, alteraciones de las glándulas, procesos crónicos o enfermedades dermatológicas.</p>
+                        <div class="callout mt-3" style="background-color:rgba(0, 119, 182, 0.05); color:var(--text-main); border-left-color:var(--primary);">
+                            <i class="ph-fill ph-info" style="color:var(--primary);"></i>
+                            <div>
+                                <strong style="color:var(--primary);">Estructuras Anatómicas Clave de Afectación:</strong>
+                                <ul class="styled-list mt-2" style="font-size:14px; font-weight:400; column-count: 2;">
+                                    <li>Glándulas de Meibomio (Posterior)</li>
+                                    <li>Glándulas de Zeiss (Anterior)</li>
+                                    <li>Glándulas de Moll</li>
+                                    <li>Folículos de las pestañas</li>
+                                    <li>Tejido cutáneo y subcutáneo</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 1. Blefaritis -->
+                    <div class="text-content-card mt-4" style="border-top: 4px solid var(--danger);">
+                        <h3 style="color:var(--danger); display:flex; align-items:center; gap:8px;">
+                            <i class="ph-fill ph-warning-circle"></i> 1. Blefaritis
+                        </h3>
+                        <p>Inflamación crónica del borde palpebral muy frecuente en la práctica médica.</p>
+                        
+                        <div class="info-grid mt-4">
+                            <div class="component-box" style="margin-bottom:0;">
+                                <strong style="color:var(--text-main);">Blefaritis Anterior y Crónica</strong>
+                                <p style="font-size:13px; margin-top:4px;">Afecta la base de las pestañas. Infecciosa <em>(Staphylococcus aureus)</em> por respuesta anormal a su pared celular, o por dermatitis seborreica/atópica. Es muy persistente.</p>
+                                <strong style="font-size:12px; margin-top:12px; display:block; color:var(--text-muted); text-transform:uppercase;">Signos y Síntomas:</strong>
+                                <p style="font-size:13px; line-height:1.4;">Ardor, resequedad, prurito, escamas duras, costras, hiperemia conjuntival/papilar leve. Pérdida o desvío de pestañas (triquiasis), ulceración folicular, muescas palpebrales y orzuelos.</p>
+                                <div style="text-align: center; margin-top: 12px;">
+                                    <img src="img/p7.png" alt="Blefaritis Anterior Crónica" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                </div>
+                            </div>
+                            <div class="component-box" style="margin-bottom:0; background-color:rgba(234, 179, 8, 0.05); border-color:#eab308;">
+                                <strong style="color:#ca8a04;">Blefaritis Posterior</strong>
+                                <p style="font-size:13px; margin-top:4px;">Relacionada estructuralmente con la <strong>Disfunción de las glándulas de Meibomio</strong>.</p>
+                                <strong style="font-size:12px; margin-top:12px; display:block; color:var(--text-muted); text-transform:uppercase;">Signos y Síntomas:</strong>
+                                <p style="font-size:13px; line-height:1.4;">Eritema palpebral agudo, telangiectasias, secreción grasa o tapón seborreico, sensación constante de cuerpo extraño, ardor e inicio de síndrome de ojo seco.</p>
+                                <div style="text-align: center; margin-top: 12px;">
+                                    <img src="img/p8.png" alt="Blefaritis Posterior" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="mt-4 mb-2">Abordaje y Tratamiento</h4>
+                        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                            <div style="flex:1; min-width:300px; background-color:var(--bg-main); padding:16px; border-radius:var(--radius-md); border:1px solid var(--border-color);">
+                                <strong style="color:var(--text-main);">Medidas No Farmacológicas</strong>
+                                <ul class="styled-list mt-2" style="font-size:13px;">
+                                    <li>Higiene palpebral estricta diaria.</li>
+                                    <li>Compresas calientes para ablandar secreciones.</li>
+                                    <li>Limpieza mecánica (eliminación de costras y masajes).</li>
+                                </ul>
+                            </div>
+                            <div style="flex:1; min-width:300px; background-color:rgba(0,119,182,0.05); padding:16px; border-radius:var(--radius-md); border:1px solid rgba(0,119,182,0.2);">
+                                <strong style="color:var(--primary);">Medidas Farmacológicas</strong>
+                                <ul class="styled-list mt-2" style="font-size:13px;">
+                                    <li><strong>Antibióticos tópicos:</strong> Bacitracina, Azitromicina, Eritromicina.</li>
+                                    <li><strong>Antiinflamatorios:</strong> Fluorometolona 0.1% (4v/día x 1 semana).</li>
+                                    <li>Antibiótico sistémico oral en casos refractarios.</li>
+                                    <li>Lubricantes oculares constantes de soporte.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grilla de Patologías Estructurales -->
+                    <div class="drugs-grid mt-4">
+                        
+                        <!-- 2. Orzuelo -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #ef4444;">
+                            <h3 style="color:#ef4444; font-size:20px; margin-bottom:4px;">2. Orzuelo (Hordeolum)</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Infección aguda supurativa <em>(Staphylococcus aureus)</em>.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <p style="font-size:13px; margin-bottom:12px;"><strong>Externo:</strong> Afecta Glándulas de Zeiss o Moll. <br><strong>Interno:</strong> Afecta Glándulas de Meibomio.</p>
+                            <div>
+                                <strong style="font-size:11px; color:var(--danger); text-transform:uppercase;">Signos y Síntomas</strong>
+                                <p style="font-size:13px; margin-top:2px;">Nódulo rojo doloroso en el borde, edema palpebral circundante, punto purulento visible y alta sensibilidad al tacto y parpadeo.</p>
+                            </div>
+                            <div class="mt-3 pt-3" style="border-top:1px solid var(--border-color);">
+                                <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Tratamiento</strong>
+                                <p style="font-size:13px; margin-top:2px;">Compresas tibias varias veces al día. <strong>Fármacos:</strong> Tobramicina o Eritromicina ungüento. Analgésicos sistémicos si hay dolor severo.</p>
+                            </div>
+                            <div style="text-align: center; margin-top: 16px;">
+                                <img src="img/p9.png" alt="Orzuelo (Hordeolum)" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            </div>
+                        </div>
+                        
+                        <!-- 3. Chalazion -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #f97316;">
+                            <h3 style="color:#f97316; font-size:20px; margin-bottom:4px;">3. Chalazión</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Inflamación granulomatosa crónica. (Suele venir tras un orzuelo no resuelto).</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <p style="font-size:13px; margin-bottom:12px;">Producida por la obstrucción aséptica de una glándula de Meibomio encapsulada.</p>
+                            <div>
+                                <strong style="font-size:11px; color:var(--danger); text-transform:uppercase;">Signos Clínicos</strong>
+                                <p style="font-size:13px; margin-top:2px;">Nódulo firme indurado en la placa tarsal, inflamación localizada, generalmente <strong>indoloro al tacto</strong> a diferencia del orzuelo.</p>
+                            </div>
+                            <div class="mt-3 pt-3" style="border-top:1px solid var(--border-color);">
+                                <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Tratamiento</strong>
+                                <p style="font-size:13px; margin-top:2px;">Masajes y calor constante. <strong>Opciones médicas:</strong> Inyección intralesional de Triamcinolona. <strong>Quirúrgico:</strong> Incisión y curetaje para drenaje.</p>
+                            </div>
+                            <div style="text-align: center; margin-top: 16px;">
+                                <img src="img/p10.png" alt="Chalazión" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            </div>
+                        </div>
+
+                        <!-- 4. Disfunción de Meibomio -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #10b981;">
+                            <h3 style="color:#10b981; font-size:20px; margin-bottom:4px;">4. Disfunción G. Meibomio</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Causa principal de intolerancia y Ojo Seco Evaporativo crónico.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <div>
+                                <strong style="font-size:11px; color:var(--danger); text-transform:uppercase;">Signos y Síntomas</strong>
+                                <p style="font-size:13px; margin-top:2px;">Orificios glandulares obstruidos/cremosos, secreción lipídica espesa en pasta, espuma lagrimal en canto canthal, hiperemia de borde.</p>
+                            </div>
+                            <div class="mt-3 pt-3" style="border-top:1px solid var(--border-color);">
+                                <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Tratamiento Continuo</strong>
+                                <p style="font-size:13px; margin-top:2px;">Aplicación de calor local y expresión glandular clínica. <strong>Fármacos:</strong> Lubricantes sistémicos y Doxiciclina oral en crónicos.</p>
+                            </div>
+                            <div style="text-align: center; margin-top: 16px;">
+                                <img src="img/p11.png" alt="Disfunción Glándulas Meibomio y Doxiciclina" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            </div>
+                        </div>
+
+                        <!-- 5. Celulitis -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #8b5cf6;">
+                            <h3 style="color:#8b5cf6; font-size:20px; margin-bottom:4px;">5. Celulitis Palpebral</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Urgencia Ocular. Penetración infecciosa sistémica.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <div>
+                                <strong style="font-size:12px; color:var(--text-main);">Tipo 1: Preseptal</strong>
+                                <p style="font-size:12px; margin-top:2px; margin-bottom:8px;">Infección anterior al septum. Cursa con edema agudo florido, eritema tenso y dolor.</p>
+                                <strong style="font-size:12px; color:var(--text-main);">Tipo 2: Orbitaria (Riesgo Ceguera/Mortal)</strong>
+                                <p style="font-size:12px; margin-top:2px;">Infección posterior. Presenta Proptosis (ojo protruido), fiebre, limitación o parálisis de movimientos oculares y dolor de órbita.</p>
+                            </div>
+                            <div class="mt-3 pt-3" style="border-top:1px solid var(--border-color);">
+                                <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Abordaje Urgente Médico</strong>
+                                <p style="font-size:13px; margin-top:2px;">Antibioticoterapia sistémica fuerte: Amoxicilina, Cefalexina. <strong>(La celulitis orbitaria requiere ingreso hospitalario intravenoso).</strong></p>
+                            </div>
+                            <div style="text-align: center; margin-top: 16px;">
+                                <img src="img/p12.png" alt="Celulitis Preseptal y Orbitaria" style="max-width: 100%; border-radius: var(--radius-sm); border: 1px solid var(--border-color); box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                            </div>
+                        </div>
+
+                        <!-- 6. Herpes Simplex & Zoster -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #ec4899;">
+                            <h3 style="color:#ec4899; font-size:20px; margin-bottom:4px;">6. Infecciones Virales</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Afectación dermatológica palpebral radicular aguda.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <div>
+                                <strong style="font-size:12px; color:var(--text-main);">A. Herpes Simplex Ocular</strong>
+                                <p style="font-size:12px; margin-top:2px; margin-bottom:8px;">Presenta vesículas en piel localizadas, eritema e inflamación. <em>Tratamiento: Aciclovir tópico u oral.</em></p>
+                                
+                                <strong style="font-size:12px; color:var(--text-main);">B. Herpes Zóster Oftálmico</strong>
+                                <p style="font-size:12px; margin-top:2px;">Vesículas estrictas en distribución del trigémino (hacia frente y punta de la nariz). Provoca dolor neuropático intenso y edema palpebral masivo. <em>Tratamiento: Valaciclovir.</em></p>
+                            </div>
+                        </div>
+
+                        <!-- 7. Edema Alergico -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #3b82f6;">
+                            <h3 style="color:#3b82f6; font-size:20px; margin-bottom:4px;">7. Edema Alérgico Agudo</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Reacción de hipersensibilidad tipo I, anafilactoide o por contacto superficial.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <div>
+                                <strong style="font-size:11px; color:var(--danger); text-transform:uppercase;">Signos y Síntomas</strong>
+                                <p style="font-size:13px; margin-top:2px;">Presenta inflamación preorbitaria pronunciada, usualmente bilateral de parición rápida (edema en bolsa de agua), hiperemia de rebote y picor intenso no doloroso.</p>
+                            </div>
+                            <div class="mt-3 pt-3" style="border-top:1px solid var(--border-color);">
+                                <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Tratamiento Oportuno</strong>
+                                <p style="font-size:13px; margin-top:2px;">Identificar y retirar el alérgeno causante (pelo animal, cosmético, polen). Aplicar antihistamínicos tópicos o vías orales y compresas frías para calmar prurito.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Separador de sub-temas -->
+                    <div class="section-divider mt-4 mb-4" style="height:1px; background:var(--border-color); margin: 32px 0;"></div>
+                    
+                    <!-- NEW SECTION: Conjuntivitis -->
+                    <div class="text-content-card mb-4" style="border-bottom:3px solid var(--primary-light);">
+                        <h3 class="mb-2" style="font-size:18px;">Inflamación de la Conjuntiva</h3>
+                        <p class="lead-text" style="font-size:15px; margin-bottom:12px;">La respuesta inflamatoria ocular es natural ante agresiones (física, química o biológica). Existe el <strong>Privilegio Inmunológico Ocular</strong>, que frena reacciones extremas intraoculares para no perder agudeza visual. Sin embargo, en la conjuntiva cursan diversas variables <em>(Basado en: Garzón P., Farmacoterapia 2025)</em>:</p>
+                    </div>
+
+                    <div class="drugs-grid mt-4">
+                        <!-- 1. Bacteriana -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #3b82f6;">
+                            <h3 style="color:#3b82f6; font-size:18px; margin-bottom:4px;">1. Conjuntivitis Bacteriana</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">S. aureus, S. pneumoniae, H. influenzae.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Tratamiento Tópico</strong>
+                            <p style="font-size:13px; margin-top:2px;">Antibióticos directos: Tobramicina, Gentamicina, Cloranfenicol, fluoroquinolonas (Moxifloxacino).</p>
+                            <p style="font-size:13px; margin-top:4px;"><strong>Soporte clínico:</strong> Higiene agresiva y termo-compresas.</p>
+                        </div>
+
+                        <!-- 2. Viral -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #ef4444;">
+                            <h3 style="color:#ef4444; font-size:18px; margin-bottom:4px;">2. Conjuntivitis Viral</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Causa principal: Adenovirus (Alta transmisibilidad).</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Manejo Paliativo</strong>
+                            <p style="font-size:13px; margin-top:2px;">No existe antiviral específico. Lágrimas artificiales constantes, AINE tópicos.</p>
+                            <p style="font-size:13px; margin-top:4px; color:var(--danger);">Corticoides solo para complicaciones membranadas severas.</p>
+                        </div>
+
+                        <!-- 3. Alérgica -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #10b981;">
+                            <h3 style="color:#10b981; font-size:18px; margin-bottom:4px;">3. C. Alérgica (Est./Perenne)</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Hipersensibilidad de mastocitos e IgE.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Terapia Recomendada</strong>
+                            <p style="font-size:13px; margin-top:2px;">Antihistamínicos duales (Olopatadina, Ketotifeno).</p>
+                            <p style="font-size:13px; margin-top:4px;"><strong>Alternativa:</strong> Corticoides suaves (Fluorometolona).</p>
+                        </div>
+
+                        <!-- 4. Vernal e inducida -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #f59e0b;">
+                            <h3 style="color:#f59e0b; font-size:18px; margin-bottom:4px;">4. QC Vernal e inducida</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Papilar gigante inducida por Lentes de Contacto y prótesis.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Abordaje Inicial</strong>
+                            <p style="font-size:13px; margin-top:2px;">Retirar estímulo mecánico (L.C.). Antihistamínicos tópicos. En estadios crónicos: <strong>Ciclosporina A</strong>.</p>
+                        </div>
+
+                        <!-- 5. Atópica y seca -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #8b5cf6;">
+                            <h3 style="color:#8b5cf6; font-size:18px; margin-bottom:4px;">5. QC Atópica / Seca</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Casos de dermatitis e inflamación franca por déficit lagrimal.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Protocolo Modulador</strong>
+                            <p style="font-size:13px; margin-top:2px;">Inmunomoduladores (Tacrolimus) para desescalar el esteroide local crónicamente. Geles lubricantes o A. Hialurónico.</p>
+                        </div>
+
+                        <!-- 6. Tóxica y química -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #64748b;">
+                            <h3 style="color:#64748b; font-size:18px; margin-bottom:4px;">6. Toxicidad/Química</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Reacción a medicamentos tópicos densos o trauma químico.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <strong style="font-size:11px; color:var(--danger); text-transform:uppercase;">Acción de Rescate</strong>
+                            <p style="font-size:13px; margin-top:2px;">Irrigación copiosa instantánea fisiológica. Lágrimas libres de conservantes y control esteroideo profiláctico.</p>
+                        </div>
+                    </div>
+
+                    <!-- Separador Infeccioso -->
+                    <div class="section-divider mt-4 mb-4" style="height:1px; background:var(--border-color); margin: 32px 0;"></div>
+                    
+                    <!-- NEW SECTION: Enfermedades Infecciosas / Microbiológicas -->
+                    <div class="text-content-card mb-4" style="border-bottom:3px solid var(--primary-light);">
+                        <h3 class="mb-2" style="font-size:18px;">Patrones Infecciosos (Clínica Microbiológica)</h3>
+                        <p class="lead-text" style="font-size:14px; margin-bottom:12px;">Las infecciones puras de la estructura anterior dependen de la adherencia física y sobre-replicación de colonias.<br><br>
+                        <strong>🔸 Patogénesis Bacteriana:</strong> Agentes comunes (S. aureus, pneumonias) invaden epitelios vulnerados (ej. por abuso de lentes de contacto) liberando factores de virulencia nocivos que activan quimiotaxis y supuración severa blanca (Legaña/Pus).<br><br>
+                        <strong>🔹 Patogénesis Viral:</strong> Transferencia de fluidos infectados donde partículas como el Herpes (HSV) hackean y matan neuro-células localizadas produciendo úlceras características que reducen la agudeza óptica para siempre. Tratamiento dependiente de Antivirales.</p>
+                    </div>
+
+                    <div class="drugs-grid mt-4">
+                        <!-- Queratitis -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #ef4444;">
+                            <h3 style="color:#ef4444; font-size:18px; margin-bottom:4px;">Queratitis Infecciosa Activa</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Infección franca y destrucción del estroma corneal transparente (Viral, Bacteriano o Micótico).</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <strong style="font-size:11px; color:var(--danger); text-transform:uppercase;">Signo y Pronóstico Grave</strong>
+                            <p style="font-size:13px; margin-top:2px;">Úlcera opaca y blanca central, o lesión dentrítica iluminable (Solo Herpes). Genera dolor fotofóbico punzante al abrir el ojo. <strong>Requiere raspado, fluorquinolonas o retro-virales potentes.</strong></p>
+                        </div>
+                        
+                        <!-- Dacriocistitis -->
+                        <div class="drug-card" style="padding:24px; border-top: 4px solid #3b82f6;">
+                            <h3 style="color:#3b82f6; font-size:18px; margin-bottom:4px;">Dacriocistitis Bacteriana</h3>
+                            <p style="font-size:13px; color:var(--text-muted);">Infección retrógrada localizada del saco de drenaje nasolagrimal.</p>
+                            <hr style="border:0; border-top:1px solid var(--border-color); margin:12px 0;">
+                            <strong style="font-size:11px; color:var(--primary); text-transform:uppercase;">Mecanismo de Acción Clínica</strong>
+                            <p style="font-size:13px; margin-top:2px;">Obstrucción anatómica de la vía de vaciado de la lágrima produciendo un encharcamiento que se infecta y forma un absceso purulento que asoma cerca a la base nasal del ojo. Tratable con presión médica, sondaje y antibióticos sistémicos o tópicos.</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
